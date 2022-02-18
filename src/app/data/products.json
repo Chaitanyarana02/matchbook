@@ -1,0 +1,62 @@
+[
+    {
+        "Id":"0019",
+        "companyName":"Greenwich Limited",
+        "streetNo":"332",
+        "streetName":"Rilson Road",
+        "City":"SpringField",
+        "State":"VA",
+        "Country":"US",
+        "Postal":"29018",
+        "MatchType":"Low Confidence"
+
+    },
+    {
+        "Id":"0003",
+        "companyName":"Topgrade SportsWear",
+        "streetNo":"2",
+        "streetName":"MainHill Road",
+        "City":"Waco",
+        "State":"TX",
+        "Country":"US",
+        "Postal":"32002",
+        "MatchType":"NO Match"
+
+    },
+    {
+        "Id":"00062",
+        "companyName":"Jerome Press Inc",
+        "streetNo":"19",
+        "streetName":"9th Street",
+        "City":"Tulsa",
+        "State":"OK",
+        "Country":"US",
+        "Postal":"4309",
+        "MatchType":"Low Confidence"
+
+    },
+    {
+        "Id":"00062",
+        "companyName":"Bell",
+        "streetNo":"764",
+        "streetName":"Lacford Road",
+        "City":"Shrewsburry",
+        "State":"NC",
+        "Country":"US",
+        "Postal":"4309",
+        "MatchType":"No Match"
+
+    },
+    {
+        "Id":"0004",
+        "companyName":"G & G Ltd",
+        "streetNo":"1012",
+        "streetName":"Dwlight Ln",
+        "City":"Sun City",
+        "State":"FL",
+        "Country":"US",
+        "Postal":"23920",
+        "MatchType":"No Match"
+
+    } 
+]

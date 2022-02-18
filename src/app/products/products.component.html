@@ -1,0 +1,320 @@
+<div class="main-container">
+  <header>
+    <p class="records">39 Records </p>
+    <p class="sub-records">0 Filtered Records; 0 Locked Records</p>
+  </header>
+  <div class="table-filters">
+    <button mat-button class="classic-btn" (click)="this.showMoreFilters = !this.showMoreFilters">
+      <ng-container *ngIf="showMoreFilters">
+        More filters   -
+      </ng-container>
+      <ng-container *ngIf="!showMoreFilters">
+        More filters   +
+      </ng-container>
+    </button>
+    <button mat-button class="btn-apply" *ngIf="showMoreFilters" (click)="this.applyFilters = !this.applyFilters; this.showMoreFilters = false">Apply</button>
+    <button mat-button class="classic-btn add-filters" *ngIf="applyFilters" (click)="this.applyFilters = false">Applied Filter<img src="../../assets/images/close-filter-cross.svg" alt=""></button>
+
+    <button mat-button class="classic-btn">Clear all</button>
+    <button mat-button class="classic-btn add-filters" (click)="this.eqTab = false">ID equals 0001<img src="../../assets/images/close-filter-cross.svg" alt=""></button>
+    <div matRipple class="show-records-row active ml-auto">10</div>
+    <div matRipple class="show-records-row">25</div>
+    <div matRipple class="show-records-row">50</div>
+    <img matTooltip="Reject Page" [matTooltipPosition]="positionOptions[1]" src="assets/images/file_close.svg" alt="file_close">
+    <img matTooltip="Reject Records" [matTooltipPosition]="positionOptions[1]" src="assets/images/ham_close.svg" alt="ham_close">
+    <img matTooltip="More" [matTooltipPosition]="positionOptions[1]" src="assets/images/three_dots.svg" alt="three_dots">
+  </div>
+  <div class="more-filters" *ngIf="showMoreFilters">
+    <div class="border-padding">
+      <div class="inner-container">
+        <div class="left-label">
+          <p>Src Record ID</p>
+        </div>
+        <div class="drop-container">
+          <p class="drop-p">Tag</p>
+          <mat-form-field appearance="fill">
+            <mat-select [(value)]="selected">
+              <mat-option *ngFor="let arr of selectArr" [value]="arr.value">
+                {{arr.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="drop-container">
+          <p class="drop-p">Country Group</p>
+          <mat-form-field appearance="fill">
+            <mat-select [(value)]="selected">
+              <mat-option *ngFor="let arr of selectArr" [value]="arr.value">
+                {{arr.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="drop-container">
+          <p class="drop-p">Import Process</p>
+          <mat-form-field appearance="fill">
+            <mat-select [(value)]="selected">
+              <mat-option *ngFor="let arr of selectArr" [value]="arr.value">
+                {{arr.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="border-padding">
+      <div class="inner-container">
+        <div class="left-label">
+          <p>Match Candidates</p>
+        </div>
+        <div class="drop-container">
+          <p class="drop-p">Company</p>
+          <mat-form-field appearance="fill">
+            <mat-select [(value)]="selected">
+              <mat-option *ngFor="let arr of selectArr" [value]="arr.value">
+                {{arr.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="drop-container">
+          <p class="drop-p">Street Name</p>
+          <mat-form-field appearance="fill">
+            <mat-select [(value)]="selected">
+              <mat-option *ngFor="let arr of selectArr" [value]="arr.value">
+                {{arr.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="drop-container">
+          <p class="drop-p">City</p>
+          <mat-form-field appearance="fill">
+            <mat-select [(value)]="selected">
+              <mat-option *ngFor="let arr of selectArr" [value]="arr.value">
+                {{arr.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="drop-container">
+          <p class="drop-p">Confidence Code Min.</p>
+          <div class="min-max">
+            <ul>
+              <li><img src="../../assets/images/minus-bar.svg" alt=""></li>
+              <li>1</li>
+              <li><img src="../../assets/images/plus-bar.svg" alt=""></li>
+            </ul>
+          </div>
+        </div>
+        <div class="drop-container">
+          <p class="drop-p">Confidence Code Max.</p>
+          <div class="min-max">
+            <ul>
+              <li><img src="../../assets/images/minus-bar.svg" alt=""></li>
+              <li>1</li>
+              <li><img src="../../assets/images/plus-bar.svg" alt=""></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="inner-container">
+        <div class="left-label">
+          
+        </div>
+        <div class="drop-container">
+          <p class="drop-p">Country</p>
+          <mat-form-field appearance="fill">
+            <mat-select [(value)]="selected">
+              <mat-option *ngFor="let arr of selectArr" [value]="arr.value">
+                {{arr.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="drop-container">
+          <p class="drop-p">Postal</p>
+          <mat-form-field appearance="fill">
+            <mat-select [(value)]="selected">
+              <mat-option *ngFor="let arr of selectArr" [value]="arr.value">
+                {{arr.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+  </div>
+  <table mat-table [dataSource]="productDataSource" multiTemplateDataRows class="mat-elevation-z8" cdkDropList
+    cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
+  
+    <!-- <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+          <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+          <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+      </ng-container> -->
+
+    <ng-container matColumnDef="dropDown">
+      <th mat-header-cell *matHeaderCellDef> </th>
+      <td mat-cell *matCellDef="let element"> <img class="drop-img" src="assets/images/accordion-drop.svg" /> </td>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="Id">
+      <th mat-header-cell *matHeaderCellDef>
+        ID <img src="assets/images/table_heading.svg" alt="" (click)="this.tableFilterMenuID = !this.tableFilterMenuID">
+        <div class="filter-parent" *ngIf="tableFilterMenuID">
+          <p class="cursor-pointer"> <img src="../../assets/images/clear-filter.svg" alt=""> Clear filter</p>
+          <p class="cursor-pointer"> <img src="../../assets/images/sort_A_to_Z.svg" alt=""> Sort A to Z</p>
+          <p class="cursor-pointer"> <img src="../../assets/images/sort_Z_to_A.svg" alt=""> Sort Z to A</p>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="1" (click)="this.equalsOk = true">Equals</mat-radio-button>
+            <!-- <div class="filter-parents" *ngIf="equalsOk">
+              <mat-form-field class="example-full-width">
+                <input type="text" placeholder="Select Users" aria-label="Select Users" matInput [matAutocomplete]="auto" [formControl]="userControl">
+                <mat-hint>Enter text to find users by name</mat-hint>
+              </mat-form-field>
+              
+              <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+                <mat-option *ngFor="let user of filteredUsers | async" [value]="selectedUsers">
+                  <div (click)="optionClicked($event, user)">
+                    <mat-checkbox [checked]="user.selected" (change)="toggleSelection(user)" (click)="$event.stopPropagation()">
+                      {{ user.firstname }} {{ user.lastname }}
+                    </mat-checkbox>
+                  </div>
+                </mat-option>
+              </mat-autocomplete>
+            </div> -->
+            <mat-radio-button value="2">Does not equal</mat-radio-button>
+            <mat-radio-button value="3">Contains</mat-radio-button>
+            <mat-radio-button value="4">Does not contain</mat-radio-button>
+          </mat-radio-group>
+          <div class="btn-container">
+            <button mat-button class="btn-cancel" (click)="this.tableFilterMenuID = false">Cancel</button>
+            <button mat-button class="btn-apply">Apply</button>
+          </div>
+        </div>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <span>{{element?.Id}} </span>
+  
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="companyName">
+      <th mat-header-cell *matHeaderCellDef> Company
+        <img src="assets/images/table_heading.svg" alt="">
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <span>{{element?.companyName}} </span>
+  
+      </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="streetNo">
+      <th mat-header-cell *matHeaderCellDef> Street </th>
+      <td mat-cell *matCellDef="let element">
+        <span>{{element?.streetNo}} </span>
+  
+      </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="streetName">
+      <th mat-header-cell *matHeaderCellDef> Street Name
+        <img src="assets/images/table_heading.svg" alt="">
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <span>{{element?.streetName}} </span>
+  
+      </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="City">
+      <th mat-header-cell *matHeaderCellDef>City
+        <img src="assets/images/table_heading.svg" alt="">
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <span>{{element?.City}} </span>
+  
+      </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="State">
+      <th mat-header-cell *matHeaderCellDef>State
+        <img src="assets/images/table_heading.svg" alt="">
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <span>{{element?.State}} </span>
+      </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="Country">
+      <th mat-header-cell *matHeaderCellDef>Country
+        <img src="assets/images/table_heading.svg" alt="">
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <span>{{element?.Country}} </span>
+      </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="Postal">
+      <th mat-header-cell *matHeaderCellDef>Postal
+        <img src="assets/images/table_heading.svg" alt="">
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <span>{{element?.Postal}} </span>
+      </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="MatchType">
+      <th mat-header-cell *matHeaderCellDef>Match Type
+        <img src="assets/images/table_heading.svg" alt="" (click)="this.tableFilterMenuMatchType = !this.tableFilterMenuMatchType">
+        <div class="filter-parent" *ngIf="tableFilterMenuMatchType">
+          <p class="cursor-pointer"> <mat-checkbox class="example-margin">Low Confidence</mat-checkbox></p>
+          <p class="cursor-pointer"> <mat-checkbox class="example-margin">No Match</mat-checkbox></p>
+          <div class="btn-container">
+            <button mat-button class="btn-cancel" (click)="this.tableFilterMenuMatchType = false">Cancel</button>
+            <button mat-button class="btn-apply">Apply</button>
+          </div>
+        </div>
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <span>{{element?.MatchType}} </span>
+      </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="Action">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let element">
+        <img class="table-actions" matTooltip="Reject All" [matTooltipPosition]="positionOptions[1]" src="../../assets/images/close-btn.svg" alt="">
+        <img class="table-actions" matTooltip="Edit" [matTooltipPosition]="positionOptions[1]" src="../../assets/images/edit-btn.svg" alt="">
+        <img class="table-actions" matTooltip="More" [matTooltipPosition]="positionOptions[1]" src="../../assets/images/more_light.svg" alt="">
+      </td>
+    </ng-container>
+    <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
+    <ng-container matColumnDef="expandedDetail">
+      <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+        <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+          <!-- <app-company></app-company> -->
+          <app-providers [Id]='element.Id'></app-providers>
+          <!-- <div class="example-element-diagram">
+            <div class="example-element-position"> {{element.position}} </div>
+            <div class="example-element-symbol"> {{element.symbol}} </div>
+            <div class="example-element-name"> {{element.name}} </div>
+            <div class="example-element-weight"> {{element.weight}} </div>
+          </div> -->
+          <!-- <div class="example-element-description">
+            {{element.description}}
+            <span class="example-element-description-attribution"> -- Wikipedia </span>
+          </div> -->
+        </div>
+      </td>
+      <!-- <app-company></app-company> -->
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row"
+      [class.example-expanded-row]="expandedElement === element"
+      (click)="expandedElement = expandedElement === element ? null : element">
+    </tr>
+    <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+  </table>
+</div>

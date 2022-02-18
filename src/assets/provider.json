@@ -1,0 +1,68 @@
+[
+    {
+        "Id": "0019",
+        "DUNS": "328428",
+        "companyName": "Greenwich Limited",
+        "streetNo": "332",
+        "streetName": "Rilson Road",
+        "City": "SpringField",
+        "State": "VA",
+        "Postal":"99999",
+        "Role": "Single Location",
+        "Status" :"Active",
+        "MatchType": "Match"
+    },
+    {
+        "Id": "0019",
+        "DUNS": "328428",
+        "companyName": "Greenwich Limited",
+        "streetNo": "332",
+        "streetName": "Rilson Road",
+        "City": "SpringField",
+        "State": "VA",
+        "Postal":"99999",
+        "Role": "Single Location",
+        "Status" :"InActive",
+        "MatchType": "Match"
+    },
+    {
+        "Id": "0019",
+        "DUNS": "8484848",
+        "companyName": "Greenwich Limited",
+        "streetNo": "332",
+        "streetName": "Rilson Road",
+        "City": "SpringField",
+        "State": "VA",
+        "Postal":"99999",
+        "Role": "Single Location",
+        "Status" :"Active",
+        "MatchType": "Match"
+    },
+    {
+        "Id": "0003",
+        "DUNS": "328428",
+        "companyName": "Topgrade SportsWear",
+        "streetNo": "332",
+        "streetName": "Rilson Road",
+        "City": "SpringField",
+        "State": "TX",
+        "Postal":"99999",
+        "Role": "Single Location",
+        "Status" :"Active",
+        "MatchType": "Match"
+    },
+    {
+        "Id": "0003",
+        "DUNS": "48848448",
+        "companyName": "Topgrade SportsWear",
+        "streetNo": "332",
+        "streetName": "Rilson Road",
+        "City": "SpringField",
+        "State": "TX",
+        "Postal":"99999",
+        "Role": "Single Location",
+        "Status" :"InActive",
+        "MatchType": "Match"
+    }
+
+]
