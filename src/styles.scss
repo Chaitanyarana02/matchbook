@@ -155,4 +155,28 @@ body { margin: 0; font-family: 'DIN Next LT Pro', sans-serif;
     .mat-checkbox-frame{
         border-color: #D2D2D2;
     }
+    .mat-slide-toggle-thumb-container{
+        top: 3px;
+        left: 3px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+    .mat-slide-toggle-thumb{
+        height: 12px;
+        width: 12px;
+    }
+    .mat-slide-toggle-bar{
+        height: 17px;
+        width: 31px;
+    }
+    .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb-container{
+        left: 0;
+    }
+    .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb{
+        background-color: #fff;
+    }
+    .mat-slide-toggle.mat-checked .mat-slide-toggle-bar {
+        background-color: #15477E;
+    }
 }

@@ -15,8 +15,8 @@
     <button mat-button class="btn-apply" *ngIf="showMoreFilters" (click)="this.applyFilters = !this.applyFilters; this.showMoreFilters = false">Apply</button>
     <button mat-button class="classic-btn add-filters" *ngIf="applyFilters" (click)="this.applyFilters = false">Applied Filter<img src="../../assets/images/close-filter-cross.svg" alt=""></button>
 
-    <button mat-button class="classic-btn">Clear all</button>
-    <button mat-button class="classic-btn add-filters" (click)="this.eqTab = false">ID equals 0001<img src="../../assets/images/close-filter-cross.svg" alt=""></button>
+    <button mat-button class="classic-btn" (click)="this.eqTab = false; this.applyFilters = false;">Clear all</button>
+    <button mat-button class="classic-btn add-filters" *ngIf="eqTab" (click)="this.eqTab = false">ID equals 0001<img src="../../assets/images/close-filter-cross.svg" alt=""></button>
     <div matRipple class="show-records-row active ml-auto">10</div>
     <div matRipple class="show-records-row">25</div>
     <div matRipple class="show-records-row">50</div>

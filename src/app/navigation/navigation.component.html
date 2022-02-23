@@ -1,0 +1,91 @@
+<app-header></app-header>
+<nav>
+    <div class="top-heading">
+        <img src="../../assets/images/matchbook-menu-logo.svg" alt="">
+        <p>Matchbook</p>
+    </div>
+    <div class="menu">
+        <div class="not-acc" [routerLink]="['/navigation']" [routerLinkActive]="['active']">
+            <img src="../../assets/images/Dashboard-Icon.svg" alt="">
+            <p>Dashboard</p>
+        </div>
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+            (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title><img class="menu-icon" src="../../assets/images/Work-Queues.svg" alt=""> Work Queues
+                    <img class="ml-auto" *ngIf="!panelOpenState" src="../../assets/images/Expand-Prospecting.svg" alt="">
+                    <img class="ml-auto" *ngIf="panelOpenState" src="../../assets/images/Contract-Prospecting.svg" alt="">
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="left-borders">
+                    <p>Stewardship Queue</p>
+                    <p>Adjudication Queues</p>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+        <div class="not-acc">
+            <img src="../../assets/images/Hierarches-Icon.svg" alt="">
+            <p>Hierarchies</p>
+        </div>
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenStateProspect = true"
+            (closed)="panelOpenStateProspect = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title><img class="menu-icon" src="../../assets/images/Search-Icon.svg" alt=""> Prospecting
+                    <img class="ml-auto" *ngIf="!panelOpenStateProspect" src="../../assets/images/Expand-Prospecting.svg" alt="">
+                    <img class="ml-auto" *ngIf="panelOpenStateProspect" src="../../assets/images/Contract-Prospecting.svg" alt="">
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="left-borders">
+                    <p>Search Data</p>
+                    <p>Build A List</p>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenStateAnalytics = true"
+            (closed)="panelOpenStateAnalytics = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title><img class="menu-icon" src="../../assets/images/Analytics.svg" alt=""> Analytics
+                    <img class="ml-auto" *ngIf="!panelOpenStateAnalytics" src="../../assets/images/Expand-Prospecting.svg" alt="">
+                    <img class="ml-auto" *ngIf="panelOpenStateAnalytics" src="../../assets/images/Contract-Prospecting.svg" alt="">
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="left-borders">
+                    <p>Industry Reports</p>
+                    <p>Operational Reports</p>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+    <div class="border-blue"></div>
+    <div class="menu">
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenStateIntigration = true"
+            (closed)="panelOpenStateIntigration = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>INTEGRATION
+                    <img class="ml-auto" *ngIf="panelOpenStateIntigration" src="../../assets/images/Expand-Integration.svg" alt="">
+                    <img class="ml-auto" *ngIf="!panelOpenStateIntigration" src="../../assets/images/Contract-Integration.svg" alt="">
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <div class="left-borders active">
+                    <p><img src="../../assets/images/Import-Icon.svg" alt="">Import</p>
+                    <p><img src="../../assets/images/Export-Icon.svg" alt="">Export</p>
+                    <p><img src="../../assets/images/Workflow-Icon.svg" alt="">Workflows</p>
+                </div>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+    <div class="border-blue"></div>
+    <div class="menu">
+        <div class="not-acc">
+            <img src="../../assets/images/Configure-Icon.svg" alt="">
+            <p>Configure</p>
+        </div>
+    </div>
+</nav>
+<div class="nav-container">
+    <app-products></app-products>
+</div>

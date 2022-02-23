@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProvidersComponent } from './providers/providers.component';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HeaderComponent } from './header/header.component';
+import { NavigationComponent } from './navigation/navigation.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     AppComponent,
     ProductsComponent,
     CompanyComponent,
-    ProvidersComponent
+    ProvidersComponent,
+    HeaderComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

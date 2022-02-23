@@ -1,0 +1,27 @@
+<header>
+    <p>Dashboard</p>
+    <img src="../../assets/images/notifications.svg" alt="">
+    <img src="../../assets/images/question-mark.svg" alt="">
+    <img src="../../assets/images/settings-icon.svg" alt="">
+    <div class="profile" (click)="this.profileMenu = !this.profileMenu; this.switchPortals = false; $event.stopPropagation()">
+        <img src="../../assets/images/account-photo.png" alt="">
+        <div class="profile-content">
+            <p>John Smith</p>
+            <span>Global Admin</span>
+        </div>
+        <!-- profile menu  -->
+        <div class="profile-menu" *ngIf="profileMenu">
+            <div class="inner"><p>My Account</p></div>
+            <div class="inner" (click)="this.switchPortals = !this.switchPortals; $event.stopPropagation()"><p>Switch Portals</p> <img *ngIf="!this.switchPortals" src="../../assets/images/profile-arrow.svg" alt="">
+                <div class="sub-inner" *ngIf="switchPortals">
+                    <p class="active">Global Admin</p>
+                    <p>Other Portal</p>
+                    <p>Other Portal</p>
+                </div>
+            </div>
+            <div class="inner"><p>Help</p></div>
+            <div class="inner"><p>Dark</p>  <mat-slide-toggle [checked]="true"></mat-slide-toggle></div>
+            <div class="logout"><p>Log Out</p></div>
+        </div>
+    </div>
+</header>
