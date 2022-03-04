@@ -13,6 +13,8 @@ import { ProvidersComponent } from './providers/providers.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { LoginComponent } from './login/login.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { NavigationComponent } from './navigation/navigation.component';
     CompanyComponent,
     ProvidersComponent,
     HeaderComponent,
-    NavigationComponent
+    NavigationComponent,
+    LoginComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,

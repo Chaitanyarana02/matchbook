@@ -1,0 +1,28 @@
+<div class="login-container">
+    <div class="login-box" [class.active]="!this.clientImg">
+            <div class="top-img">
+                <div class="text-center w-100"><img src="../../assets/images/login-main-logo.svg" alt=""></div> 
+                <div *ngIf="clientImg" class="text-center w-100"><img src="../../assets/images/travelers-img.svg" alt=""></div> 
+            </div>
+        <div class="login-content" [class.active]="!this.clientImg">
+            <p class="main-title">Log In</p>
+            <p class="error-code" *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">Invalid username or password</p>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>example@email.com</mat-label>
+                <input matInput placeholder="" value="" [formControl]="emailFormControl">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>password</mat-label>
+                <input matInput placeholder="" type="password" value="">
+            </mat-form-field>
+            <div class="remember-forgot">
+                <mat-checkbox>Remember me</mat-checkbox>
+                <p [routerLink]="['/forgot-password']">Forgot your password?</p>
+            </div>
+            <button class="login-btn" matRipple >Log In</button>
+            <button class="basic-btn" matRipple><img src="../../assets/images/link-btn.svg" alt=""> Send sign on link</button>
+            <button class="basic-btn" matRipple><img src="../../assets/images/microsoft-logo.svg" alt=""> Sign in with Microsoft</button>
+            <button class="basic-btn" matRipple><img src="../../assets/images/google-logo.svg" alt=""> Sign in with Google</button>
+        </div>
+    </div>
+</div>
